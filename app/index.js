@@ -1,9 +1,30 @@
 import React, {Component} from 'react';
 import Navigator from './config/routes';
-import {addNavigationHelpers} from 'react-navigation';
+import {addNavigationHelpers, NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
+import {BackHandler} from 'react-native';
 
 class App extends Component {
+
+	componentDidMount() {
+		BackHandler.addEventListener('hardwareBackPress', () => {
+			if(this.props.nav.index === 0) {
+				return false;
+			}
+			this.props.dispatch(NavigationActions.back());
+			return true;
+		});
+	}
+
+	componentWillUnmount() {
+		BackHandler.removeEventListener('hardwareBackPress', () => {
+			if(this.props.nav.index === 0) {
+				return false;
+			}
+			this.props.dispatch(NavigationActions.back());
+			return true;
+		});
+	}
 
 	render() {
 		return (
