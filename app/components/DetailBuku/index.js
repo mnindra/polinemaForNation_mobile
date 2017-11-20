@@ -62,10 +62,8 @@ export default class DetailBuku extends Component {
 							<WebView source={{html: buku.deskripsi}} />
 						</Tab>
 					</Tabs>
-
-
 				</Content>
-				<Button block success>
+				<Button block success onPress={() => this.props.pemesanan()}>
 					<Text>Pesan</Text>
 				</Button>
 			</Container>
