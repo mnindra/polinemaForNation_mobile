@@ -24,7 +24,11 @@ export default class DetailBuku extends Component {
 					</View>
 
 					<Tabs initialPage={0}>
-						<Tab heading="Detail" style={styles.tab}>
+						<Tab
+							heading="Detail"
+							tabStyle={styles.tab}
+							activeTabStyle={styles.tab}
+							style={styles.tabContent}>
 							<Grid>
 								<Col style={styles.fitur}>
 									<Content padder style={styles.fiturContent} contentContainerStyle={{alignItems: 'center'}}>
@@ -58,7 +62,11 @@ export default class DetailBuku extends Component {
 								</Col>
 							</Grid>
 						</Tab>
-						<Tab heading="Deskripsi" style={styles.tab}>
+						<Tab
+							heading="Deskripsi"
+							tabStyle={styles.tab}
+							activeTabStyle={styles.tab}
+							style={styles.tabContent}>
 							<WebView source={{html: buku.deskripsi}} />
 						</Tab>
 					</Tabs>

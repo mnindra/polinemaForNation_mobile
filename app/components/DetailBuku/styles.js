@@ -19,6 +19,9 @@ const styles  = StyleSheet.create({
 		paddingBottom: 15
 	},
 	tab: {
+		backgroundColor: '#0288d1'
+	},
+	tabContent: {
 		paddingTop: 20
 	},
 	judul: {
