@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Content, Form, Item, Label, Input, Button, Text} from 'native-base';
+import {Container, Content, Form, Item, Label, Input, Button, Text, Icon} from 'native-base';
 import {api} from '../../config/api';
 import styles from './styles';
 

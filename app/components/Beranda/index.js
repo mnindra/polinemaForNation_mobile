@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Content, Text, ListItem, List, Body, Thumbnail} from 'native-base';
+import {Container, Content, Text, ListItem, List, Body, Thumbnail, Item, Icon, Input} from 'native-base';
 import {host, api} from '../../config/api';
 import styles from './styles';
 
@@ -11,6 +11,9 @@ export default class Beranda extends Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {
+			'search': ''
+		};
 		this.getBuku();
 	}
 
@@ -33,10 +36,22 @@ export default class Beranda extends Component {
 	}
 
 	render() {
+
+		const filteredBuku = this.state.search ? this.props.buku.filter(data => {
+			return data.judul.indexOf(this.state.search) > -1;
+		}) : this.props.buku;
+
 		return(
 			<Container style={styles.container}>
+				<Item>
+					<Input
+						placeholder='Cari Buku'
+						value={this.state.search}
+						onChangeText={(search) => this.setState({search})}/>
+					<Icon active name='search' />
+				</Item>
 				<Content>
-					<List dataArray={this.props.buku} renderRow={(rowData) => this.renderRow(rowData)} />
+					<List dataArray={filteredBuku} renderRow={(rowData) => this.renderRow(rowData)} />
 				</Content>
 			</Container>
 		);
