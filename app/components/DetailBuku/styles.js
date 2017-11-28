@@ -15,7 +15,6 @@ const styles  = StyleSheet.create({
 	heading: {
 		width: '100%',
 		alignItems: 'center',
-		paddingTop: 20,
 		paddingBottom: 15
 	},
 	tab: {
@@ -43,7 +42,10 @@ const styles  = StyleSheet.create({
 	},
 	icon: {
 		color: '#3d3d3d',
-		fontSize: 30
+		fontSize: 40
+	},
+	previewButton: {
+		marginBottom: 20
 	}
 });
 

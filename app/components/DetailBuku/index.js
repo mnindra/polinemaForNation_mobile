@@ -11,17 +11,27 @@ export default class DetailBuku extends Component {
 	};
 
 	render() {
+		console.log(this.props);
 		let buku = this.props.navigation.state.params;
 		return(
 			<Container style={styles.container}>
 				<Content contentContainerStyle={styles.content} padder>
-					<Image style={styles.sampul} source={{ uri: host + '/img/sampul/' + buku.sampul }} />
 
 					<View style={styles.heading}>
 						<Text style={styles.judul}>{buku.judul}</Text>
 						<Text note>{buku.kategori.nama}</Text>
-						<Text note style={{ fontSize: 14, color: buku.stok > 0 ? '#4bb34a' : '#ff5e3a' }}>{ buku.stok > 0 ? 'tersedia' : 'tidak tersedia' }</Text>
+						<Text note style={{ fontSize: 20, color: buku.stok > 0 ? '#4bb34a' : '#ff5e3a' }}>{ buku.stok > 0 ? 'Tersedia' : 'Tidak Tersedia' }</Text>
 					</View>
+
+					<Image style={styles.sampul} source={{ uri: host + '/img/sampul/' + buku.sampul }} />
+
+					<Button
+						primary
+						block
+						style={styles.previewButton}
+						onPress={() => this.props.lihatBuku(buku.file)}>
+						<Text>Lihat Buku</Text>
+					</Button>
 
 					<Tabs initialPage={0}>
 						<Tab

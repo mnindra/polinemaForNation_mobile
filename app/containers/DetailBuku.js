@@ -14,6 +14,12 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(NavigationActions.navigate({
 				routeName: 'Pemesanan'
 			}));
+		},
+		lihatBuku: (ebook) => {
+			dispatch(NavigationActions.navigate({
+				routeName: 'LihatBuku',
+				params: ebook
+			}));
 		}
 	};
 };
