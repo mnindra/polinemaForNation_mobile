@@ -7,7 +7,7 @@ import styles from './styles';
 export default class LihatBuku extends Component {
 
 	static navigationOptions = {
-		title: "Detail Buku"
+		title: "Pratinjau Isi Buku"
 	};
 
 	render() {
