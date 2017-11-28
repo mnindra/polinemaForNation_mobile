@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Content, Text, Button, Grid, Col, Icon, Tab, Tabs} from 'native-base';
-import {Image, View, WebView} from 'react-native';
+import {Image, View} from 'react-native';
+import AutoHeightWebView from 'react-native-autoheight-webview';
 import {host} from '../../config/api';
 import styles from './styles';
 
@@ -77,7 +78,7 @@ export default class DetailBuku extends Component {
 							tabStyle={styles.tab}
 							activeTabStyle={styles.tab}
 							style={styles.tabContent}>
-							<WebView source={{html: buku.deskripsi}} />
+							<AutoHeightWebView source={{html: buku.deskripsi}} />
 						</Tab>
 					</Tabs>
 				</Content>
