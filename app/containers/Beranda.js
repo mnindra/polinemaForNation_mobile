@@ -1,4 +1,4 @@
-import {setBuku, setPengaturan} from '../actions';
+import {setBuku, setPengaturan, setKategori} from '../actions';
 import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
 import Beranda from '../components/Beranda';
@@ -7,6 +7,9 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		setBuku: (buku) => {
 			dispatch(setBuku(buku));
+		},
+		setKategori: (kategori) => {
+			dispatch(setKategori(kategori));
 		},
 		setPengaturan: (pengaturan) => {
 			dispatch(setPengaturan(pengaturan));
@@ -23,7 +26,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
 	return {
 		nav: state.nav,
-		buku: state.buku
+		buku: state.buku,
+		kategori: state.kategori
 	};
 };
 
