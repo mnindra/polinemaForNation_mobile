@@ -1,4 +1,4 @@
-import {setBuku} from '../actions';
+import {setBuku, setPengaturan} from '../actions';
 import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
 import Beranda from '../components/Beranda';
@@ -7,6 +7,9 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		setBuku: (buku) => {
 			dispatch(setBuku(buku));
+		},
+		setPengaturan: (pengaturan) => {
+			dispatch(setPengaturan(pengaturan));
 		},
 		detailBuku: (buku) => {
 			dispatch(NavigationActions.navigate({

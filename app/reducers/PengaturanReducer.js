@@ -1,10 +1,7 @@
 const PengaturanReducer = (state = {}, action) => {
 	switch (action.type) {
 		case 'SET_PENGATURAN': {
-			return {
-				...state,
-				pengaturan: action.pengaturan
-			};
+			return action.pengaturan || state;
 		}
 		default: {
 			return state;
