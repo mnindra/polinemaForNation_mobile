@@ -1,22 +1,14 @@
 import React, {Component} from 'react';
 import {
-	Container,
 	Content,
 	Text,
 	ListItem,
 	List,
 	Body,
-	Thumbnail,
-	Item,
 	Icon,
-	Input,
-	Drawer,
-	Button,
-	Header,
-	Left,
-	Right,
-	Title
+	Left
 } from 'native-base';
+import {Image} from 'react-native';
 import styles from './styles';
 
 export default class Sidebar extends Component {
@@ -25,6 +17,11 @@ export default class Sidebar extends Component {
 
 		return(
 			<Content style={styles.content}>
+
+				<Content contentContainerStyle={{alignItems: 'center'}}>
+					<Image style={styles.image} source={require('../../resources/images/logo.png')} />
+				</Content>
+
 				<List>
 					<ListItem
 						icon
